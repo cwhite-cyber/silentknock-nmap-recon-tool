@@ -1,0 +1,27 @@
+FROM alpine:3.20
+
+# Alpine's package manager is apk, not apt.
+# --no-cache skips the local package index cache entirely, so there's
+# nothing to clean up afterward (unlike apt, no separate rm -rf step needed).
+# shadow provides real useradd/groupadd — Alpine's minimal base doesn't have them.
+
+RUN apk add --no-cache \
+    nmap=7.95-r0 \
+    nmap-scripts=7.95-r0 \
+    bind-tools \
+    whois \
+    bash \
+    shadow \
+    ca-certificates
+
+COPY silentknock.sh /usr/local/bin/silentknock.sh
+RUN chmod +x /usr/local/bin/silentknock.sh
+
+WORKDIR /output
+
+RUN groupadd -r -g 5000 -o silentknock && useradd -r -u 5000 -o -g silentknock -d /output -s /sbin/nologin silentknock
+RUN chown -R silentknock:silentknock /output
+
+USER silentknock
+
+ENTRYPOINT ["/usr/local/bin/silentknock.sh"]

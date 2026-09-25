@@ -1,0 +1,189 @@
+==================================================
+ RECON REPORT FOR: example.com
+ Generated: Fri Sep 25 06:30:59 UTC 2026
+ Mode: normal
+==================================================
+
+--------------------------------------------------
+ WHOIS
+--------------------------------------------------
+   Domain Name: EXAMPLE.COM
+   Registry Domain ID: 2336799_DOMAIN_COM-VRSN
+   Registrar WHOIS Server: whois.iana.org
+   Registrar URL: http://res-dom.iana.org
+   Updated Date: 2026-08-14T08:01:43Z
+   Creation Date: 1995-08-14T04:00:00Z
+   Registry Expiry Date: 2027-08-13T04:00:00Z
+   Registrar: RESERVED-Internet Assigned Numbers Authority
+   Registrar IANA ID: 376
+   Registrar Abuse Contact Email:
+   Registrar Abuse Contact Phone:
+   Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+   Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+   Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+   Name Server: ELLIOTT.NS.CLOUDFLARE.COM
+   Name Server: HERA.NS.CLOUDFLARE.COM
+   DNSSEC: signedDelegation
+   DNSSEC DS Data: 2371 13 2 C988EC423E3880EB8DD8A46FE06CA230EE23F35B578D64E78B29C3E1C83D245A
+   URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of whois database: 2026-09-25T06:30:51Z <<<
+
+For more information on Whois status codes, please visit https://icann.org/epp
+
+NOTICE: The expiration date displayed in this record is the date the
+registrar's sponsorship of the domain name registration in the registry is
+currently set to expire. This date does not necessarily reflect the expiration
+date of the domain name registrant's agreement with the sponsoring
+registrar.  Users may consult the sponsoring registrar's Whois database to
+view the registrar's reported date of expiration for this registration.
+
+TERMS OF USE: You are not authorized to access or query our Whois
+database through the use of electronic processes that are high-volume and
+automated except as reasonably necessary to register domain names or
+modify existing registrations; the Data in VeriSign Global Registry
+Services' ("VeriSign") Whois database is provided by VeriSign for
+information purposes only, and to assist persons in obtaining information
+about or related to a domain name registration record. VeriSign does not
+guarantee its accuracy. By submitting a Whois query, you agree to abide
+by the following terms of use: You agree that you may use this Data only
+for lawful purposes and that under no circumstances will you use this Data
+to: (1) allow, enable, or otherwise support the transmission of mass
+unsolicited, commercial advertising or solicitations via e-mail, telephone,
+or facsimile; or (2) enable high volume, automated, electronic processes
+that apply to VeriSign (or its computer systems). The compilation,
+repackaging, dissemination or other use of this Data is expressly
+prohibited without the prior written consent of VeriSign. You agree not to
+use electronic processes that are automated and high-volume to access or
+query the Whois database except as reasonably necessary to register
+domain names or modify existing registrations. VeriSign reserves the right
+to restrict your access to the Whois database in its sole discretion to ensure
+operational stability.  VeriSign may restrict or terminate your access to the
+Whois database for failure to abide by these terms of use. VeriSign
+reserves the right to modify these terms at any time.
+
+The Registry database contains ONLY .COM, .NET, .EDU domains and
+Registrars.
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+domain:       EXAMPLE.COM
+
+organisation: Internet Assigned Numbers Authority
+
+created:      1992-01-01
+source:       IANA
+
+
+--------------------------------------------------
+ DNS - A RECORDS
+--------------------------------------------------
+172.66.147.243
+104.20.23.154
+
+--------------------------------------------------
+ DNS - MX RECORDS
+--------------------------------------------------
+0 .
+
+--------------------------------------------------
+ DNS - NS RECORDS
+--------------------------------------------------
+hera.ns.cloudflare.com.
+elliott.ns.cloudflare.com.
+
+--------------------------------------------------
+ NMAP SCAN
+--------------------------------------------------
+# Nmap 7.93 scan initiated Fri Sep 25 06:31:00 2026 as: nmap -oX /output/example.com-1790317859.xml -oN - example.com
+Nmap scan report for example.com (104.20.23.154)
+Host is up (0.039s latency).
+Other addresses for example.com (not scanned): 172.66.147.243 2606:4700:10::ac42:93f3 2606:4700:10::6814:179a
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE
+80/tcp   open  http
+443/tcp  open  https
+8080/tcp open  http-proxy
+8443/tcp open  https-alt
+
+# Nmap done at Fri Sep 25 06:31:05 2026 -- 1 IP address (1 host up) scanned in 5.28 seconds
+XML report saved to: /output/example.com-1790317859.xml
+
+--------------------------------------------------
+ NMAP VULNERABILITY SCAN (with version detection)
+ ---------- THIS MAY TAKE A MOMENT ...------------
+--------------------------------------------------
+# Nmap 7.93 scan initiated Fri Sep 25 06:31:05 2026 as: nmap -v -sV --script vuln --stats-every 10s -oX /output/example.com-1790317859-vuln.xml -oN - example.com
+Nmap scan report for example.com (172.66.147.243)
+Host is up (0.021s latency).
+Other addresses for example.com (not scanned): 104.20.23.154 2606:4700:10::6814:179a 2606:4700:10::ac42:93f3
+Not shown: 996 filtered tcp ports (no-response)
+PORT     STATE SERVICE  VERSION
+80/tcp   open  http     Cloudflare http proxy
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  BID:49303  CVE:CVE-2011-3192
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://www.tenable.com/plugins/nessus/55976
+|       https://www.securityfocus.com/bid/49303
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_      https://seclists.org/fulldisclosure/2011/Aug/175
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: cloudflare
+443/tcp  open  ssl/http Cloudflare http proxy
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: cloudflare
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+| http-vuln-cve2011-3192: 
+|   VULNERABLE:
+|   Apache byterange filter DoS
+|     State: VULNERABLE
+|     IDs:  BID:49303  CVE:CVE-2011-3192
+|       The Apache web server is vulnerable to a denial of service attack when numerous
+|       overlapping byte ranges are requested.
+|     Disclosure date: 2011-08-19
+|     References:
+|       https://www.tenable.com/plugins/nessus/55976
+|       https://www.securityfocus.com/bid/49303
+|       https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-3192
+|_      https://seclists.org/fulldisclosure/2011/Aug/175
+8080/tcp open  http     Cloudflare http proxy
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+8443/tcp open  ssl/http Cloudflare http proxy
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-server-header: cloudflare
+| http-slowloris-check: 
+|   VULNERABLE:
+|   Slowloris DOS attack
+|     State: LIKELY VULNERABLE
+|     IDs:  CVE:CVE-2007-6750
+|       Slowloris tries to keep many connections to the target web server open and hold
+|       them open as long as possible.  It accomplishes this by opening connections to
+|       the target web server and sending a partial request. By doing so, it starves
+|       the http server's resources causing Denial Of Service.
+|       
+|     Disclosure date: 2009-09-17
+|     References:
+|       http://ha.ckers.org/slowloris/
+|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-6750
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Fri Sep 25 06:35:23 2026 -- 1 IP address (1 host up) scanned in 258.09 seconds
+Vuln XML report saved to: /output/example.com-1790317859-vuln.xml
+
+==================================================
+ END OF REPORT
+==================================================
