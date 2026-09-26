@@ -1,5 +1,5 @@
 # Silent Knock
-
+![Silent Knock logo](logo.svg)
 A containerized, multi-tool reconnaissance script — whois, DNS lookups, a standard nmap scan, and an nmap vulnerability scan — wrapped in a hardened, non-root Docker image, with a companion Python parser for the structured XML output.
 
 Built as a hands-on Docker learning project: every tool call, every bug, and every fix below was worked through by hand rather than copy-pasted from a tutorial.
