@@ -1,4 +1,5 @@
 # Silent Knock
+![Silent Knock logo](logo.svg)
 
 A containerized, multi-tool reconnaissance script — whois, DNS lookups, a standard nmap scan, and an nmap vulnerability scan — wrapped in a hardened, non-root Docker image, with a companion Python parser for the structured XML output.
 
@@ -104,6 +105,15 @@ A few real issues hit and fixed during development — documented here because t
 - **Mismatched UIDs across a bind mount.** Debian's `useradd` and Alpine's `useradd` each auto-assign different UIDs by default, and a bind-mounted host folder doesn't remap ownership — meaning a non-root container user can get silently locked out of a folder it should be able to write to. Fixed by explicitly pinning the UID/GID (`-u`/`-g`) to the same number in both Dockerfiles, and `chown`-ing the host folder to match.
 - **A stuck container, confirmed via exit code.** A hung scan left a container running indefinitely; `docker stop` on it later showed exit code `137` (SIGKILL) rather than `0`, confirming it had to be force-killed rather than exiting on its own.
 
+## Viewing a report as HTML
+
+`view_last.sh` finds the most recent vuln scan for a target, converts it to a styled HTML report using nmap's own built-in XSL stylesheet, and opens it in your browser — no manual filename hunting required.
+
+```bash
+sudo apt install xsltproc   # one-time, host-side
+./view_last.sh example.com
+```
+
 ## Files
 
 | File | Purpose |
@@ -113,6 +123,7 @@ A few real issues hit and fixed during development — documented here because t
 | `Dockerfile.alpine` | Alpine-based build (smaller footprint) |
 | `parse_nmap.py` | Standalone XML report parser |
 | `sort_output.sh` | Organizes `/output` into per-target subfolders |
+| `view_last.sh` | Converts the latest vuln scan to HTML and opens it |
 
 ## Possible next steps
 
