@@ -1,5 +1,9 @@
 <img src="logo.svg" width="500" alt="Silent Knock logo">
 
+
+
+
+
 # Silent Knock
 
 A containerized, multi-tool reconnaissance script — whois, DNS lookups, a standard nmap scan, and an nmap vulnerability scan — wrapped in a hardened, non-root Docker image, with a companion Python parser for the structured XML output.
@@ -16,6 +20,8 @@ Given a target (domain or IP), Silent Knock runs:
 4. **nmap vulnerability scan** (`--script vuln`, with `-sV` version detection) — checks discovered services against known CVE signatures, also saved as XML
 
 All output is written to `/output` (bind-mounted to your host), timestamped so repeated scans never overwrite each other.
+
+https://github.com/user-attachments/assets/25717ac6-5a2c-4e4c-9976-1ae9f11c6ec4
 
 ![Full scan output — WHOIS section](screenshots/silentknock-scan_results.png)
 
